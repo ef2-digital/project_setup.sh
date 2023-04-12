@@ -21,9 +21,46 @@ mkdir back-end
 
 # Load Strapi into back-end folder
 
-yarn create strapi-app backend --template @ef2/strapi
+yarn create strapi-app backend --template @ef2/strapi@latest --typescript --no-run --quickstart
+
 cd back-end
 cp .env.example .env
+cd data
+cp plugins.example.ts ../config/plugins.ts
+cp database.example.ts ../config/database.ts
+
+
+# Get the DB user name
+echo ">> Database username:"
+read username
+
+printf "DATABASE_USERNAME=$username" > .env
+
+# Get the DB user password
+echo ">> Database password:"
+read password
+
+printf "DATABASE_PASSWORD=$password" > .env
+
+# Get the DB name
+echo ">> Database name:"
+read name
+
+printf "DATABASE_NAME=$name" > .env
+
+$key=`openssl rand -base64 24`
+$key2=`openssl rand -base64 24`
+$key3=`openssl rand -base64 24`
+$key4=`openssl rand -base64 24`
+$key5=`openssl rand -base64 24`
+$key6=`openssl rand -base64 24`
+
+printf "APP_KEYS=$key1,$key2,$key3" > .env
+printf "API_TOKEN_SALT=$key4" > .env
+printf "ADMIN_JWT_SECRET=$key5" > .env
+printf "TRANSFER_TOKEN_SALT=$key6" > .env
+
+yarn build
 
 cd ..
 
