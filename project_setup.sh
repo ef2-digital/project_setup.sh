@@ -16,6 +16,10 @@ echo -e ">> Begin setup...\n "
 # Echo verbose commands
 #set -x
 
+mkdir $name
+
+cd $name
+
 # Create the backend directory
 mkdir back-end
 
