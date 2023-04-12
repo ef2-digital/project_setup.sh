@@ -18,14 +18,18 @@ echo -e ">> Begin setup...\n "
 
 mkdir $name
 
+echo -e ">> cd $name...\n "
 cd $name
 
+echo -e ">> mkdir back-end...\n "
 # Create the backend directory
 mkdir back-end
 
+echo -e ">> loading Strapi inside back-end \n "
 # Load Strapi into back-end folder
 yarn create strapi-app back-end --template @ef2/strapi@latest --typescript --no-run --quickstart
 
+echo -e ">> configuring Strapi \n "
 cd back-end
 cp .env.example .env
 cd data
@@ -33,6 +37,7 @@ cp plugins.example.ts ../config/plugins.ts
 cp database.example.ts ../config/database.ts
 
 
+echo -e ">> Database configuration \n "
 # Get the DB user name
 echo ">> Database username:"
 read username
