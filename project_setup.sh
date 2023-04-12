@@ -24,7 +24,6 @@ cd $name
 mkdir back-end
 
 # Load Strapi into back-end folder
-
 yarn create strapi-app back-end --template @ef2/strapi@latest --typescript --no-run --quickstart
 
 cd back-end
