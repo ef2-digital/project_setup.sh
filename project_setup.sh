@@ -40,7 +40,6 @@ yarn create strapi-app back-end --template @ef2/strapi@latest --typescript --no-
 
 echo "Configuring Strapi \n "
 cd back-end
-cp .env.example .env
 
 #Copy plugins and database settings from template
 cd data
@@ -75,8 +74,6 @@ read dbname
     echo "ADMIN_JWT_SECRET=$(openssl rand -base64 24)"
     echo "TRANSFER_TOKEN_SALT=$(openssl rand -base64 24)"
 } >>.env
-
-yarn build
 
 cd ..
 
