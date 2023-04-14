@@ -6,7 +6,6 @@ ENDRED="\e[0m"
 
 set -e
 
-echo "\n"
 echo "Welcome to the EF2 project set up script.\n"
 echo "This script will set up a basic project structure\n"
 echo "Before you continue, please make sure you're using node version 16.x and have already have a MYSQL DB ready\n"
@@ -15,9 +14,7 @@ echo "Before you continue, please make sure you're using node version 16.x and h
 echo "Repository Name:"
 read name
 
-echo "\n"
 echo $(printf "Begin setup for ${RED}$name${ENDRED}\n\n")
-echo "\n"
 
 mkdir $name
 cd $name
