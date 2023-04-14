@@ -36,7 +36,7 @@ mkdir back-end
 
 echo "loading Strapi inside back-end \n "
 # Load Strapi into back-end folder
-yarn create strapi-app back-end --template @ef2/strapi@latest --typescript --no-run --quickstart
+yarn create strapi-app back-end --template @ef2/strapi@latest --typescript --no-run
 
 echo "Configuring Strapi \n "
 cd back-end
