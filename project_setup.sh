@@ -67,7 +67,10 @@ echo "Database name:"
 read dbname
 
 {
-    echo "\nDATABASE_USERNAME=$username"
+    echo "STRAPI_DISABLE_UPDATE_NOTIFICATION=true"
+    echo "BROWSER=false"
+    echo "STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE='nl'"
+    echo "DATABASE_USERNAME=$username"
     echo "DATABASE_PASSWORD=$password"
     echo "DATABASE_NAME=$dbname"
     echo "APP_KEYS=$(openssl rand -base64 24),$(openssl rand -base64 24),$(openssl rand -base64 24)"
