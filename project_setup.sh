@@ -44,36 +44,15 @@ cd back-end
 #Copy plugins and database settings from template
 cd data
 cp plugins.example.ts ../config/plugins.ts
-cp database.example.ts ../config/database.ts
 rm plugins.example.ts
 rm database.example.ts
 cd ..
-
-echo "Database configuration \n "
-# Get the DB user name
-echo ">> Database username:"
-read username
-
-# Get the DB user password
-echo "Database password:"
-read -s password
-
-# Get the DB name
-echo "Database name:"
-read dbname
 
 {
     echo "STRAPI_DISABLE_UPDATE_NOTIFICATION=true"
     echo "BROWSER=false"
     echo "STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE='nl'"
-    echo "DATABASE_USERNAME=$username"
-    echo "DATABASE_PASSWORD=$password"
-    echo "DATABASE_NAME=$dbname"
-    echo "APP_KEYS=$(openssl rand -base64 24),$(openssl rand -base64 24),$(openssl rand -base64 24)"
-    echo "API_TOKEN_SALT=$(openssl rand -base64 24)"
-    echo "ADMIN_JWT_SECRET=$(openssl rand -base64 24)"
-    echo "TRANSFER_TOKEN_SALT=$(openssl rand -base64 24)"
-} >>.env
+} >> .env
 
 cd ..
 
