@@ -57,8 +57,6 @@ cd ..
 cd ..
 
 # Create frontend directory
-mkdir front-end
-
 # Load NEXTjs starter into front-end folder
 yarn create next-app front-end --typescript --eslint -e https://github.com/ef2-digital/next
 cd front-end
