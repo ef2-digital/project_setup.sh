@@ -45,7 +45,6 @@ cd back-end
 cd data
 cp plugins.example.ts ../config/plugins.ts
 rm plugins.example.ts
-rm database.example.ts
 cd ..
 
 {
